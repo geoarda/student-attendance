@@ -181,15 +181,6 @@
                                                                 onclick="showLessonDetails('@lesson.Id', '@lesson.Title', '@(lesson.Teacher?.FullName ?? "Öğretmen Yok")', '@(lesson.Group?.Name ?? "Grup Yok")', '@GetDayName(lesson.DayOfWeek)', '@lesson.StartTime.ToString(@"hh\:mm")', '@lesson.EndTime.ToString(@"hh\:mm")', '@(lesson.SessionId?.ToString() ?? "")')">
                                                             <i class="fas fa-info-circle"></i> Detaylar
                                                         </button>
-                                                        <a href="@Url.Action("EditLesson", "Lessons", new { id = lesson.Id })" class="btn btn-sm" style="background: #3b82f6; border: 1px solid #3b82f6; color: white; border-radius: 6px; font-weight: 500;">
-                                                            <i class="fas fa-edit"></i> Güncelle
-                                                        </a>
-                                                        <button type="button" class="btn btn-sm" style="background: #ef4444; border: 1px solid #ef4444; color: white; border-radius: 6px; font-weight: 500;" 
-                                                                onclick="deleteLesson(this)" 
-                                                                data-lesson-id="@lesson.Id" 
-                                                                data-lesson-title="@lesson.Title">
-                                                            <i class="fas fa-trash"></i> Sil
-                                                        </button>
                                                     </div>
                                                 </td>
                                             }

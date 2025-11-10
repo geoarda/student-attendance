@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\akdem\\OneDrive\\Desktop\\apps\\OneDrive\\Desktop\\attendance\\Yoklama.csproj": {}
+    "C:\\Users\\akdem\\OneDrive\\Desktop\\apps\\OneDrive\\Desktop\\everything\\projects\\attendance\\Yoklama.csproj": {}
   },
   "projects": {
-    "C:\\Users\\akdem\\OneDrive\\Desktop\\apps\\OneDrive\\Desktop\\attendance\\Yoklama.csproj": {
+    "C:\\Users\\akdem\\OneDrive\\Desktop\\apps\\OneDrive\\Desktop\\everything\\projects\\attendance\\Yoklama.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\akdem\\OneDrive\\Desktop\\apps\\OneDrive\\Desktop\\attendance\\Yoklama.csproj",
+        "projectUniqueName": "C:\\Users\\akdem\\OneDrive\\Desktop\\apps\\OneDrive\\Desktop\\everything\\projects\\attendance\\Yoklama.csproj",
         "projectName": "Yoklama",
-        "projectPath": "C:\\Users\\akdem\\OneDrive\\Desktop\\apps\\OneDrive\\Desktop\\attendance\\Yoklama.csproj",
+        "projectPath": "C:\\Users\\akdem\\OneDrive\\Desktop\\apps\\OneDrive\\Desktop\\everything\\projects\\attendance\\Yoklama.csproj",
         "packagesPath": "C:\\Users\\akdem\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\akdem\\OneDrive\\Desktop\\apps\\OneDrive\\Desktop\\attendance\\obj\\",
+        "outputPath": "C:\\Users\\akdem\\OneDrive\\Desktop\\apps\\OneDrive\\Desktop\\everything\\projects\\attendance\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

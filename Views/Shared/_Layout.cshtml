@@ -2,6 +2,9 @@
 @using Yoklama.Data
 @inject IHttpContextAccessor HttpContextAccessor
 @inject AppDbContext Db
+@{
+    // (Removed sidebar role subtitle - navigation sections are now role-specific below)
+}
 <!DOCTYPE html>
 <html lang="tr">
 
@@ -43,7 +46,7 @@
         <div class="loader"></div>
     </div>
 
-    @if (User.Identity!.IsAuthenticated)
+    @if (User?.Identity?.IsAuthenticated == true)
     {
         <!-- Modern Sidebar -->
         <nav class="sidebar" id="sidebar">
@@ -55,6 +58,7 @@
                             <i class="fas fa-graduation-cap"></i>
                         </div>
                         <div class="title">Yoklama Sistemi</div>
+                        <!-- no subtitle here; section titles below are role-specific -->
                     </a>
                     <button class="btn btn-md btn-light sidebar-close d-md-none" type="button" aria-label="Kapat">
                         <i class="fas fa-times"></i>
@@ -80,11 +84,11 @@
                     </div>
                 </div>
 
-                <!-- Öğretmen Menüsü -->
+                <!-- Dersler - görünür Teacher ve Admin için -->
                 @if (User.IsInRole("Teacher") || User.IsInRole("Admin"))
                 {
                     <div class="nav-section">
-                        <div class="nav-section-title">Öğretmen</div>
+                        <div class="nav-section-title">Dersler</div>
                         <div class="nav-item">
                             <a href="@Url.Action("Index", "Lessons")" class="nav-link" data-page="lessons">
                                 <div class="icon"><i class="fas fa-chalkboard-teacher"></i></div>
@@ -93,7 +97,6 @@
                         </div>
                         @if (User.IsInRole("Teacher"))
                         {
-
                             <div class="nav-item">
                                 <a href="@Url.Action("Index", "Attendance")" class="nav-link" data-page="attendance">
                                     <div class="icon"><i class="fas fa-clipboard-check"></i></div>
@@ -111,7 +114,7 @@
                 }
 
 
-                <!-- Admin Menüsü -->
+                <!-- Admin Menüsü split into logical sections -->
                 @if (User.IsInRole("Admin"))
                 {
                     <div class="nav-section">
@@ -122,12 +125,10 @@
                                 <div class="text">Dashboard</div>
                             </a>
                         </div>
-                        <div class="nav-item">
-                            <a href="@Url.Action("Index", "Groups")" class="nav-link" data-page="groups">
-                                <div class="icon"><i class="fas fa-layer-group"></i></div>
-                                <div class="text">Gruplar</div>
-                            </a>
-                        </div>
+                    </div>
+
+                    <div class="nav-section">
+                        <div class="nav-section-title">Kullanıcı Yönetimi</div>
                         <div class="nav-item">
                             <a href="@Url.Action("Users", "Admin")" class="nav-link" data-page="admin-users">
                                 <div class="icon"><i class="fas fa-users"></i></div>
@@ -140,12 +141,30 @@
                                 <div class="text">Öğrenciler</div>
                             </a>
                         </div>
+                    </div>
+
+                    <div class="nav-section">
+                        <div class="nav-section-title">Gruplar</div>
+                        <div class="nav-item">
+                            <a href="@Url.Action("Index", "Groups")" class="nav-link" data-page="groups">
+                                <div class="icon"><i class="fas fa-layer-group"></i></div>
+                                <div class="text">Gruplar</div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="nav-section">
+                        <div class="nav-section-title">Devamsızlık</div>
                         <div class="nav-item">
                             <a href="@Url.Action("Index", "Absences")" class="nav-link" data-page="absences">
                                 <div class="icon"><i class="fas fa-user-times"></i></div>
                                 <div class="text">Devamsızlar</div>
                             </a>
                         </div>
+                    </div>
+
+                    <div class="nav-section">
+                        <div class="nav-section-title">İçerik</div>
                         <div class="nav-item">
                             <a href="@Url.Action("Index", "Announcements")" class="nav-link" data-page="announcements">
                                 <div class="icon"><i class="fas fa-bullhorn"></i></div>
